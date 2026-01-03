@@ -10,3 +10,4 @@ if scriptUrl then
 else
     warn("❌ Unsupported game | GameId:", game.GameId)
 end
+return Games
