@@ -3,8 +3,10 @@ local Games = {
 }
 local scriptUrl = Games[game.GameId]
 if scriptUrl then
-    task.spawn(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Executed.lua"))() end)
     loadstring(game:HttpGet(scriptUrl))()
+    Tracker = game:HttpGet("https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Executed.lua")
+    local Run = loadstring(Tracker)
+    task.spawn(function() Run(Games) end)
 else
     warn("❌ Unsupported game | GameId:", game.GameId)
 end
