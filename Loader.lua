@@ -1,5 +1,5 @@
 local Games = {
-    [6161049307] = "https://github.com/Ratkinator/RatX/blob/main/Pixel%20Blade.lua",
+    [6161049307] = "https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Pixel%20Blade.lua",
     [9876543210] = "https://raw.githubusercontent.com/USER/REPO/main/game2.lua"
 }
 
