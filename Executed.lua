@@ -10,7 +10,7 @@ local function incrementExecutionCount()
     local success, response = pcall(function()
         local gameName = getGameName(game.GameId)
         local res = request({
-            Url = "worker url",
+            Url = "https://halal-worker.vvladut245.workers.dev/",
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json",
