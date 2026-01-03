@@ -10,4 +10,7 @@ if scriptUrl then
 else
     warn("❌ Unsupported game | GameId:", game.GameId)
 end
+task.spawn(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Executed.lua"))()
+end)
 return Games
