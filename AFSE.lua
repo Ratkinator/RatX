@@ -219,7 +219,7 @@ SettingsSection:Button({
 SettingsSection:Slider({
     Title = "Training Speed",
     Desc = "Delay between training actions",
-    Value = {Min = 0.01, Max = 1, Default = 0.1, Decimals = 2},
+    Value = {Min = 0,Max = 30,Default = 3},
     Callback = function(value)
         print("[Rat Hub X] Training speed set to: " .. value .. "s")
     end
