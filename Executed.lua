@@ -1,7 +1,7 @@
 local Games = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Games.lua"))()
 local function getGameName(id)
     local url = Games[id]
-    if not url then return "Universal Script" end
+    if not url then return end
     local filename = url:match("([^/]+)%.lua$"):gsub("%%20", " ")
     return filename:gsub("%.lua$", ""):gsub("%.Lua$", "")
 end
