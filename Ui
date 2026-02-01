@@ -1,0 +1,310 @@
+-- Rat Hub X
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+
+-- Themes with gradients
+local themes = {
+    {
+        Name = "Dark Purple",
+        Colors = {
+            Accent = Color3.fromHex("#4a1e6e"),
+            Background = Color3.fromHex("#1a0b24"),
+            Outline = Color3.fromHex("#9d4edd"),
+            Text = Color3.fromHex("#e0aaff"),
+            Placeholder = Color3.fromHex("#7a7a7a"),
+            Button = Color3.fromHex("#5a189a"),
+            Icon = Color3.fromHex("#c77dff"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#4a1e6e"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#1a0b24"), Transparency = 0 },
+            Rotation = 45
+        },
+        ButtonGradient = {Color3.fromHex("#4a1e6e"), Color3.fromHex("#9d4edd")}
+    },
+    {
+        Name = "Blue Ocean",
+        Colors = {
+            Accent = Color3.fromHex("#1e40af"),
+            Background = Color3.fromHex("#0f172a"),
+            Outline = Color3.fromHex("#60a5fa"),
+            Text = Color3.fromHex("#dbeafe"),
+            Placeholder = Color3.fromHex("#64748b"),
+            Button = Color3.fromHex("#1d4ed8"),
+            Icon = Color3.fromHex("#93c5fd"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#1e40af"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#0f172a"), Transparency = 0 },
+            Rotation = 180
+        },
+        ButtonGradient = {Color3.fromHex("#1e40af"), Color3.fromHex("#60a5fa")}
+    },
+    {
+        Name = "Crimson Red",
+        Colors = {
+            Accent = Color3.fromHex("#dc2626"),
+            Background = Color3.fromHex("#1f2937"),
+            Outline = Color3.fromHex("#f87171"),
+            Text = Color3.fromHex("#fef2f2"),
+            Placeholder = Color3.fromHex("#9ca3af"),
+            Button = Color3.fromHex("#b91c1c"),
+            Icon = Color3.fromHex("#fca5a5"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#dc2626"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#1f2937"), Transparency = 0 },
+            Rotation = 90
+        },
+        ButtonGradient = {Color3.fromHex("#dc2626"), Color3.fromHex("#f87171")}
+    },
+    {
+        Name = "Emerald Green",
+        Colors = {
+            Accent = Color3.fromHex("#059669"),
+            Background = Color3.fromHex("#064e3b"),
+            Outline = Color3.fromHex("#34d399"),
+            Text = Color3.fromHex("#d1fae5"),
+            Placeholder = Color3.fromHex("#6b7280"),
+            Button = Color3.fromHex("#047857"),
+            Icon = Color3.fromHex("#6ee7b7"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#059669"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#064e3b"), Transparency = 0 },
+            Rotation = 135
+        },
+        ButtonGradient = {Color3.fromHex("#059669"), Color3.fromHex("#34d399")}
+    },
+    {
+        Name = "Midnight Black",
+        Colors = {
+            Accent = Color3.fromHex("#18181b"),
+            Background = Color3.fromHex("#101010"),
+            Outline = Color3.fromHex("#FFFFFF"),
+            Text = Color3.fromHex("#FFFFFF"),
+            Placeholder = Color3.fromHex("#7a7a7a"),
+            Button = Color3.fromHex("#52525b"),
+            Icon = Color3.fromHex("#a1a1aa"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#18181b"), Transparency = 0 },
+            Rotation = 0
+        },
+        ButtonGradient = {Color3.fromHex("#18181b"), Color3.fromHex("#52525b")}
+    },
+    {
+        Name = "Sunset Orange",
+        Colors = {
+            Accent = Color3.fromHex("#f97316"),
+            Background = Color3.fromHex("#451a03"),
+            Outline = Color3.fromHex("#fb923c"),
+            Text = Color3.fromHex("#fed7aa"),
+            Placeholder = Color3.fromHex("#92400e"),
+            Button = Color3.fromHex("#ea580c"),
+            Icon = Color3.fromHex("#fdba74"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#f97316"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#451a03"), Transparency = 0 },
+            Rotation = 45
+        },
+        ButtonGradient = {Color3.fromHex("#f97316"), Color3.fromHex("#fb923c")}
+    },
+    {
+        Name = "Pink Lavender",
+        Colors = {
+            Accent = Color3.fromHex("#a855f7"),
+            Background = Color3.fromHex("#3b0764"),
+            Outline = Color3.fromHex("#c084fc"),
+            Text = Color3.fromHex("#f3e8ff"),
+            Placeholder = Color3.fromHex("#7e22ce"),
+            Button = Color3.fromHex("#9333ea"),
+            Icon = Color3.fromHex("#d8b4fe"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#a855f7"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#3b0764"), Transparency = 0 },
+            Rotation = 225
+        },
+        ButtonGradient = {Color3.fromHex("#a855f7"), Color3.fromHex("#c084fc")}
+    },
+    {
+        Name = "Teal Ocean",
+        Colors = {
+            Accent = Color3.fromHex("#0d9488"),
+            Background = Color3.fromHex("#134e4a"),
+            Outline = Color3.fromHex("#5eead4"),
+            Text = Color3.fromHex("#ccfbf1"),
+            Placeholder = Color3.fromHex("#0f766e"),
+            Button = Color3.fromHex("#14b8a6"),
+            Icon = Color3.fromHex("#99f6e4"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#0d9488"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#134e4a"), Transparency = 0 },
+            Rotation = 315
+        },
+        ButtonGradient = {Color3.fromHex("#0d9488"), Color3.fromHex("#5eead4")}
+    },
+    {
+        Name = "Golden Yellow",
+        Colors = {
+            Accent = Color3.fromHex("#eab308"),
+            Background = Color3.fromHex("#422006"),
+            Outline = Color3.fromHex("#fde047"),
+            Text = Color3.fromHex("#fef9c3"),
+            Placeholder = Color3.fromHex("#a16207"),
+            Button = Color3.fromHex("#ca8a04"),
+            Icon = Color3.fromHex("#facc15"),
+        },
+        Gradient = {
+            ["0"] = { Color = Color3.fromHex("#eab308"), Transparency = 0 },
+            ["100"] = { Color = Color3.fromHex("#422006"), Transparency = 0 },
+            Rotation = 90
+        },
+        ButtonGradient = {Color3.fromHex("#eab308"), Color3.fromHex("#fde047")}
+    }
+}
+
+-- Register themes
+for _, theme in ipairs(themes) do
+    WindUI:AddTheme({
+        Name = theme.Name,
+        Accent = theme.Colors.Accent,
+        Background = theme.Colors.Background,
+        Outline = theme.Colors.Outline,
+        Text = theme.Colors.Text,
+        Placeholder = theme.Colors.Placeholder,
+        Button = theme.Colors.Button,
+        Icon = theme.Colors.Icon,
+    })
+    
+    WindUI:Gradient({
+        ["0"] = theme.Gradient["0"],
+        ["100"] = theme.Gradient["100"],
+    }, {
+        Rotation = theme.Gradient.Rotation,
+    })
+end
+
+-- Create window
+local Window = WindUI:CreateWindow({
+    Title = "Rat Hub X",
+    Icon = "rat",
+    Author = "Ratkinator",
+    Folder = "RatHubX",
+    Size = UDim2.fromOffset(550, 400),
+    Transparent = true,
+    BackgroundImageTransparency = 0.15,
+    Theme = "Dark",
+    Resizable = true,
+    HideSearchBar = false,
+})
+
+-- Tag
+Window:Tag({
+    Title = "v0.1",
+    Icon = "rat",
+    Color = Color3.fromHex("#9d4edd"),
+    Radius = 8
+})
+
+-- Apply default theme
+WindUI:SetTheme("Dark Purple")
+
+-- Create tabs
+local HomeTab = Window:Tab({
+    Title = "Home",
+    Icon = "message-circle",
+})
+
+local SettingsTab = Window:Tab({
+    Title = "Settings",
+    Icon = "settings",
+})
+
+-- Select home tab
+HomeTab:Select()
+
+-- Home tab - just the button (no section)
+HomeTab:Button({
+    Title = "Discord Server Link",
+    Desc = "Copy Discord invite to clipboard",
+    Callback = function()
+        local invite = "https://discord.gg/scmGBzXN24"
+        if setclipboard then
+            setclipboard(invite)
+            Window:Notify({
+                Title = "Copied",
+                Description = "Discord link copied",
+                Icon = "copy",
+                Color = Color3.fromHex("#30ff6a"),
+                Time = 3
+            })
+        elseif writeclipboard then
+            writeclipboard(invite)
+            Window:Notify({
+                Title = "Copied",
+                Description = "Discord link copied",
+                Icon = "copy",
+                Color = Color3.fromHex("#30ff6a"),
+                Time = 3
+            })
+        else
+            Window:Notify({
+                Title = "Error",
+                Description = "Clipboard not available",
+                Icon = "x-circle",
+                Color = Color3.fromHex("#ff6b6b"),
+                Time = 3
+            })
+        end
+    end
+})
+
+-- Settings tab - just the dropdown (no section)
+local themeNames = {}
+for _, theme in ipairs(themes) do
+    table.insert(themeNames, theme.Name)
+end
+
+local ThemeDropdown = SettingsTab:Dropdown({
+    Title = "Select Theme",
+    Desc = "Choose from 10 themes",
+    Values = themeNames,
+    Value = "Dark Purple",
+    Callback = function(selectedTheme)
+        for _, theme in ipairs(themes) do
+            if theme.Name == selectedTheme then
+                WindUI:SetTheme(theme.Name)
+                Window:EditOpenButton({
+                    Color = ColorSequence.new(unpack(theme.ButtonGradient))
+                })
+                Window:Notify({
+                    Title = "Theme Applied",
+                    Description = theme.Name .. " theme loaded",
+                    Icon = "palette",
+                    Color = theme.ButtonGradient[1],
+                    Time = 2
+                })
+                break
+            end
+        end
+    end
+})
+
+-- Set custom open button with WindUI's default button but with your logo
+Window:EditOpenButton({
+    Title = "Rat Hub X", -- Title text
+    Icon = "rbxassetid://77209058521997", -- Your logo as icon
+    CornerRadius = UDim.new(0, 16),
+    StrokeThickness = 2,
+    Color = ColorSequence.new(
+        Color3.fromHex("#4a1e6e"),  -- Dark Purple start
+        Color3.fromHex("#9d4edd")   -- Purple end
+    ),
+    OnlyMobile = false,
+    Enabled = true,
+    Draggable = true,
+})
