@@ -204,10 +204,10 @@ local Window = WindUI:CreateWindow({
 
 -- Tag
 Window:Tag({
-    Title = "v0.1",
+    Title = "v2.5",
     Icon = "rat",
     Color = Color3.fromHex("#9d4edd"),
-    Radius = 8
+    Radius = 10
 })
 
 -- Apply default theme
