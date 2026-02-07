@@ -412,7 +412,7 @@ HomeTab:Button({
 
 -- Create tag with single purple color
 Window:Tag({
-    Title = "v0.1",
+    Title = "v2.1.0",
     Icon = "rat",
     Color = Color3.fromHex("#9d4edd"), -- Single purple color
     Radius = 8
