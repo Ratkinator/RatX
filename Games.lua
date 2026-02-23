@@ -8,4 +8,5 @@ return {
     [9527851429] = "https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Save%20brainrots%20from%20lava.lua",
     [9563386957] = "https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Climb%20for%20brainrots.lua",
     [8144728961] = "https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Abyss.lua",
+    [9509842868] = "https://raw.githubusercontent.com/Ratkinator/RatX/refs/heads/main/Garden%20Horizons.lua",
 }
